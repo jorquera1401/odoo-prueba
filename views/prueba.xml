@@ -1,0 +1,35 @@
+<odoo>
+    <record model="ir.ui.view" id="prueba_list_form">
+      <field name="name">prueba list</field>
+      <field name="model">prueba.course</field>
+      <field name="arch" type="xml">
+        <form>
+            <group col="3">
+                <group colspan="1">
+                    <field name="name"/>
+                </group>
+                <group colspan="2">
+                    <group >
+                        <field name="description"/>
+                    </group>
+                    <group >
+                        <field name="fecha"/>
+                    </group>
+                    <group >
+                        <field name="campo"/>
+                    </group>
+                </group>
+            </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="course_list_action">
+        <field name="name">Courses</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+    <menuitem id="main_prueba_menu" name="Gestion de Cursos "/>
+    <menuitem id="prueba_menu" name="Abrir Elementos" parent="main_prueba_menu"/>
+    <menuitem id="courses_menu" name="Mis Cursos" parent="prueba_menu" action="course_list_action"/>
+
+
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+ 
+    <record model="ir.ui.view" id="prueba_list_tree">
+      <field name="name">prueba list</field>
+      <field name="model">prueba.course</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/> 
+          <field name="fecha"/>
+          <field name="campo"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

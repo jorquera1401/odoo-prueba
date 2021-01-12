@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+
+          <record id="course0" model="prueba.course">
+            <field name="name">Course 0</field>
+            <field name="description">Course 0's descripcion 
+            
+            
+            puede tener multiples lineas
+            </field>
+          </record>
+
+          <record id="course1" model="prueba.course">
+            <field name="name">Course 1</field>
+            
+          </record>
+
+          <record id="object2" model="prueba.course">
+            <field name="name">Course 2</field>
+            <field name="description">Esta es la segunda descripcion del curso</field>
+          </record>
+
+    </data>
+</odoo>
