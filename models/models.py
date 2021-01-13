@@ -20,7 +20,7 @@ class Curso(models.Model):
     precio = fields.Integer(string="precio")
     impuesto = fields.Integer(default="0",editable=False)
     total = fields.Integer(default="0")
-
+ 
 
     @api.onchange('name')
     def _setear_descripcion(self):

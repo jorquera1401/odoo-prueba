@@ -1,18 +1,30 @@
 <odoo>
   <data> 
  
-    <record model="ir.ui.view" id="prueba_list_tree">
-      <field name="name">prueba list</field>
-      <field name="model">prueba.course</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/> 
-          <field name="fecha"/>
-          <field name="campo"/>
-          <field name="description"/>
-          <field name="precio"/>
-        </tree>
-      </field>
-    </record>
+    
   </data>
+
+      <!--Accion de ventana que abre el modelo -->
+    <record model="ir.actions.act_window" id="course_list_action">
+        <field name="name">Courses</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">prueba.course</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_negocios_actuales': 1}</field>
+    </record>
+    
+    <record id="carrera_list_action" model="ir.actions.act_window">
+        <field name="name">Mis Carrera</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">prueba.carrera</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_negocios_actuales': 1}</field>
+    </record> 
+
+    <menuitem id="main_prueba_menu" name="Gestion de Cursos "/>
+
+    <menuitem id="prueba_menu" name="Abrir Elementos" parent="main_prueba_menu"/>
+    
+    <menuitem id="carrera_menu" name="Mi Carrera" parent="prueba_menu" action="carrera_list_action"/>
+    <menuitem id="courses_menu" name="Mis Cursos" parent="prueba_menu" action="course_list_action"/>
 </odoo>

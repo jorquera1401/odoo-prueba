@@ -1,0 +1,25 @@
+<odoo>
+    <record model="ir.ui.view" id="carrera_list_form">
+      <field name="name">carrera form</field>
+      <field name="model">prueba.carrera</field>
+      <field name="arch" type="xml">
+        <form>
+        <h3>Ingresar datos de carrera </h3>
+            <group col="3">
+                    <field name="nombre"/>
+            </group>
+        </form>
+      </field>
+    </record>
+ 
+    <record model="ir.ui.view" id="carrera_list_tree">
+      <field name="name">carrera list</field>
+      <field name="model">prueba.carrera</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/> 
+        </tree>
+      </field>
+    </record>
+  
+</odoo>
