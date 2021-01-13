@@ -6,8 +6,7 @@ from datetime import date
 class Curso(models.Model):
     _name="prueba.course"
     _description = "Prueba Courses"
-    _impuesto=0
-    _total=0
+   
 
 
     name = fields.Char(string="Title",required=True)
@@ -18,9 +17,11 @@ class Curso(models.Model):
     campo  = fields.Char(default="valor defecto")
 
     precio = fields.Integer(string="precio")
-    impuesto = fields.Integer(default="0",editable=False)
-    total = fields.Integer(default="0")
- 
+    impuesto = fields.Float(default="0")
+    total = fields.Float(default="0")
+    
+    #hace la relacion con la otra clase 
+    carrera_nombre = fields.Many2one('prueba.carrera', ondelete='cascade',string='Carrera')
 
     @api.onchange('name')
     def _setear_descripcion(self):
@@ -30,7 +31,13 @@ class Curso(models.Model):
     def _calcular_impuesto(self):
         self.impuesto = self.precio*0.19
         self.total = self.precio - self.impuesto
-
+  #  @api.one
+    def calcular(self,context=None):
+        precio = self.precio+self.precio*0.5
+        if context is None:
+            context = {'precio':precio}
+        self.write(context)
+ 
 
 class Carrera(models.Model):
     _name='prueba.carrera'

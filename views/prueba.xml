@@ -4,10 +4,16 @@
       <field name="model">prueba.course</field>
       <field name="arch" type="xml">
         <form>
-        <h3>Ingresar datos del plan 2 </h3>
+        <header>
+            <button name="calcular" type="object" string="Auementar Precio" class="oe_highlight"/>
+    
+        </header>
+        <sheet>
+         <h3>Ingresar datos del plan 2 </h3>
             <group col="3">
                 <group colspan="1">
                     <field name="name"/>
+                    <field name="carrera_nombre"/>
                 </group>
                 <group colspan="2">
                     <group >
@@ -28,12 +34,27 @@
                    
                 </group>
                 <group colspan="1">
-                    <field name="impuesto"/>
-                    <field name="total"/>
+                    <!--Para que no sean editables se debe agregar readonly-->
+                    <field name="impuesto" readonly='1'/>
+                    <field name="total"  readonly='1'/>
                 </group>
             </group>
+            </sheet>
         </form>
       </field>
+    </record>
+
+    <!--Busqueda se hace en la barra de busqueda especifica si la busqueda es por uno de los campos-->
+
+    <record model="ir.ui.view" id="course_search_view">
+        <field name="name">course.search</field>
+        <field name="model">prueba.course</field>
+        <field name="arch" type="xml">
+            <search>
+             
+                <field string="buscar por descripcion" name="description"/>
+            </search>
+        </field>
     </record>
 
      <record model="ir.ui.view" id="prueba_list_tree">

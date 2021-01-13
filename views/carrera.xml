@@ -21,5 +21,15 @@
         </tree>
       </field>
     </record>
+
+    <record model="ir.ui.view" id="carrera_search_view">
+        <field name="name">carrera.search</field>
+        <field name="model">prueba.carrera</field>
+        <field name="arch" type="xml">
+            <search>
+                <field string="buscar por descripcion" name="nombre"/>
+            </search>
+        </field>
+    </record>
   
 </odoo>
