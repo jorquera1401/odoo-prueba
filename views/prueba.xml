@@ -4,6 +4,7 @@
       <field name="model">prueba.course</field>
       <field name="arch" type="xml">
         <form>
+        <h3>Ingresar datos del plan </h3>
             <group col="3">
                 <group colspan="1">
                     <field name="name"/>
@@ -20,16 +21,32 @@
                     </group>
                 </group>
             </group>
+            <h3>Ingresar valor plan</h3>
+            <group col="2">
+                <group colspan="1">
+                    <field name="precio"/>
+                   
+                </group>
+                <group colspan="1">
+                    <field name="impuesto"/>
+                    <field name="total"/>
+                </group>
+            </group>
         </form>
       </field>
     </record>
+
     <record model="ir.actions.act_window" id="course_list_action">
         <field name="name">Courses</field>
         <field name="type">ir.actions.act_window</field>
     </record>
+    
+    
+
     <menuitem id="main_prueba_menu" name="Gestion de Cursos "/>
+
     <menuitem id="prueba_menu" name="Abrir Elementos" parent="main_prueba_menu"/>
     <menuitem id="courses_menu" name="Mis Cursos" parent="prueba_menu" action="course_list_action"/>
-
+     
 
 </odoo>

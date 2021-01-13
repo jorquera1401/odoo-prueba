@@ -6,7 +6,9 @@ from datetime import date
 class Curso(models.Model):
     _name="prueba.course"
     _description = "Prueba Courses"
-   
+    _impuesto=0
+    _total=0
+
 
     name = fields.Char(string="Title",required=True)
 
@@ -15,17 +17,27 @@ class Curso(models.Model):
 
     campo  = fields.Char(default="valor defecto")
 
+    precio = fields.Integer(string="precio")
+    impuesto = fields.Integer(default="0",editable=False)
+    total = fields.Integer(default="0")
+
 
     @api.onchange('name')
     def _setear_descripcion(self):
         self.description = self.name
 
+    @api.onchange('precio')
+    def _calcular_impuesto(self):
+        self.impuesto = self.precio*0.19
+        self.total = self.precio - self.impuesto
+
+
 class Carrera(models.Model):
     _name='prueba.carrera'
     _description='Carrera Test'
 
-    name = fields.Char('Nombre',required=True)
-    
+    nombre = fields.Char('Nombre',required=True)
+
  
 
     

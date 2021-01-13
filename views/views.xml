@@ -1,5 +1,5 @@
 <odoo>
-  <data>
+  <data> 
  
     <record model="ir.ui.view" id="prueba_list_tree">
       <field name="name">prueba list</field>
@@ -10,6 +10,7 @@
           <field name="fecha"/>
           <field name="campo"/>
           <field name="description"/>
+          <field name="precio"/>
         </tree>
       </field>
     </record>
