@@ -1,0 +1,61 @@
+<odoo>
+
+    <!--Formulario -->
+    <record model="ir.ui.view" id="alumno_list_form">
+      <field name="name">prueba list</field>
+      <field name="model">prueba.alumno</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet>
+            <group col="2">
+                <group>
+                    <h3>Ingresar Datos Personales </h3>
+                    <field name="rut" />
+                    <field name="nombre"/>
+                    <field name="apellido_p"/>
+                    <field name="apellido_m"/>
+                    <field name="fecha_nacimiento"/>
+                </group>
+                <group>
+                    <h3>Ingresar Datos Curriculares</h3>
+                    <field name="carrera"/>
+                </group>
+            </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--Busqueda se hace en la barra de busqueda especifica si la busqueda es por uno de los campos-->
+
+    <record model="ir.ui.view" id="alumno_search_view">
+        <field name="name">alumno.search</field>
+        <field name="model">prueba.alumno</field>
+        <field name="arch" type="xml">
+            <search>
+                <field string="buscar por nombre" name="nombre"/>
+                <field string="buscar por apellido" name="apellido_p"/>
+
+            </search>
+        </field>
+    </record>
+
+    <!--tabla lista de datos-->
+
+     <record model="ir.ui.view" id="alumno_list_tree">
+      <field name="name">alumno list</field>
+      <field name="model">prueba.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="rut"/> 
+          <field name="nombre"/> 
+          <field name="apellido_p"/>
+          <field name="apellido_m"/>
+          <field name="carrera"/>
+          
+        </tree>
+      </field>
+    </record>
+
+
+</odoo>

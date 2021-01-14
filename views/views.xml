@@ -17,14 +17,22 @@
         <field name="name">Mis Carrera</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">prueba.carrera</field>
+        <field name="view_mode">tree,form,search</field>
+        <field name="context">{'search_default_negocios_actuales': 1}</field>
+    </record>
+
+    <record id="alumno_list_action" model="ir.actions.act_window">
+        <field name="name">Alumno</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">prueba.alumno</field>
         <field name="view_mode">tree,form</field>
         <field name="context">{'search_default_negocios_actuales': 1}</field>
     </record> 
 
-    <menuitem id="main_prueba_menu" name="Gestion de Cursos "/>
+    <menuitem id="main_prueba_menu" name="Universidad"/>
 
-    <menuitem id="prueba_menu" name="Abrir Elementos" parent="main_prueba_menu"/>
     
-    <menuitem id="carrera_menu" name="Mi Carrera" parent="prueba_menu" action="carrera_list_action"/>
-    <menuitem id="courses_menu" name="Mis Cursos" parent="prueba_menu" action="course_list_action"/>
+    <menuitem id="alumno_menu" name="Alumnos" parent="main_prueba_menu" action="alumno_list_action"/>
+    <menuitem id="carrera_menu" name="Carrera" parent="main_prueba_menu" action="carrera_list_action"/>
+    <menuitem id="courses_menu" name="Cursos" parent="main_prueba_menu" action="course_list_action"/>
 </odoo>

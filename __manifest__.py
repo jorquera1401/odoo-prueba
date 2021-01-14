@@ -32,6 +32,7 @@
         'views/templates.xml',
         'views/prueba.xml',
         'views/carrera.xml',
+        'views/alumno.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -7,6 +7,10 @@
         <h3>Ingresar datos de carrera </h3>
             <group col="3">
                     <field name="nombre"/>
+                    <field name="descripcion"/>
+                    <field name="arancel"/>
+                    <field name="vacantes"/>
+                    
             </group>
         </form>
       </field>
@@ -27,7 +31,7 @@
         <field name="model">prueba.carrera</field>
         <field name="arch" type="xml">
             <search>
-                <field string="buscar por descripcion" name="nombre"/>
+                <field string="buscar por descripcion" name="descripcion"/>
             </search>
         </field>
     </record>
